@@ -29,8 +29,8 @@ data class ProductInfo(
     val price: Double? = null,
     @SerializedName("producer")
     @Expose
-    val producer: String? = null
-//    @SerializedName("category")
-//    @Expose
-//    val categories: List<Category>? = null
+    val producer: String? = null,
+    @SerializedName("category")
+    @Expose
+    val categories: List<Category>? = null
 )
