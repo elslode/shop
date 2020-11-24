@@ -20,15 +20,15 @@ class ProductViewModel(application: Application) : AndroidViewModel(application)
         loadData()
     }
 
-    fun loadData() {
-        val disposable = ApiFactory.apiService.getProductsInfo()
+    private fun loadData() {
+        val disposable = ApiFactory.apiService.getProductsInfo(maxItems = 200)
+            .map { it.data?.map { it.id }?.joinToString (",") }
             .subscribeOn(Schedulers.io())
             .observeOn(AndroidSchedulers.mainThread())
             .subscribe({
-                val a = it.data?.map { it.id}?.joinToString { "," }
-                Log.d("TEST_OF_LOADING_DATA", it.toString())
+
             }, {
-                Log.d("TEST_OF_LOADING_DATA", it.message.toString())
+
             })
     }
 

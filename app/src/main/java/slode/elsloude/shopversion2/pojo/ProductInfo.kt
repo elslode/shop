@@ -2,11 +2,14 @@ package slode.elsloude.shopversion2.pojo
 
 import androidx.room.Entity
 import androidx.room.PrimaryKey
+import androidx.room.TypeConverter
+import androidx.room.TypeConverters
 import com.google.gson.annotations.Expose
 import com.google.gson.annotations.SerializedName
-import java.util.*
+import slode.elsloude.shopversion2.converters.Converters
 
 @Entity(tableName = "full_price_list")
+//@TypeConverters(Converters::class)
 data class ProductInfo(
     @PrimaryKey(autoGenerate = true)
     @SerializedName("id")
@@ -29,8 +32,8 @@ data class ProductInfo(
     val price: Double? = null,
     @SerializedName("producer")
     @Expose
-    val producer: String? = null,
-    @SerializedName("category")
-    @Expose
-    val categories: List<Category>? = null
+    val producer: String? = null
+//    @SerializedName("category")
+//    @Expose
+//    val categories: List<Category>? = null
 )

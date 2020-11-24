@@ -13,6 +13,8 @@ interface ApiService{
         @Query(QUERY_PARAM_SORT) sort: String = CURRENCY
     ): Single<CategoryInfoListOfData>
 
+
+
     companion object {
         private const val QUERY_PARAM_MAXITEMS = "maxItems"
         private const val QUERY_PARAM_SORT = "sort"

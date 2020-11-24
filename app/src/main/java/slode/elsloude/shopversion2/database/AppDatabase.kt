@@ -7,7 +7,7 @@ import androidx.room.RoomDatabase
 import androidx.room.TypeConverters
 import slode.elsloude.shopversion2.pojo.ProductInfo
 
-@Database(entities = [ProductInfo::class], version = 2, exportSchema = false)
+@Database(entities = [ProductInfo::class], version = 5, exportSchema = false)
 abstract class AppDatabase : RoomDatabase() {
     companion object {
         private var db: AppDatabase? = null
