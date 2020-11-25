@@ -14,6 +14,7 @@ class ProductViewModel(application: Application) : AndroidViewModel(application)
     private val db = AppDatabase.getInstance(application)
     private val compositeDisposable = CompositeDisposable()
 
+
     val priceList = db.productPriceInfoDao().getPriceList()
 
     init {
